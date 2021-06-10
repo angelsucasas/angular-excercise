@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  userdetailAPIUrl:"https://jsonplaceholder.typicode.com/users",
+  gravatarURL:"https://www.gravatar.com/avatar/",
+  Emails:[
+    "angel.alejandro.sucasas08@gmail.com",
+    "betty52b_w802n@bylup.com",
+    "delmer29m_m107o@bylup.com",
+    "ifunkv_j512j@bylup.com",
+    "zgrahamn_f670c@bylup.com"
+  ]
+  
 };
 
 /*

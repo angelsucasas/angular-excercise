@@ -1,0 +1,41 @@
+<mat-grid-list cols="1" rowHeight="fit" class="litle-grid-list">
+    <mat-grid-tile style="width: 100%;">
+        <p class="special-title">
+            Usuarios activos
+        </p>        
+    </mat-grid-tile>
+    <!--mat-grid-tile>
+        <p style="margin-left: -6.4em;">
+            <mat-form-field class="example-full-width">            
+                <mat-label>Buscar...</mat-label>
+                <textarea matInput placeholder="Ej. buscar por nombre, compañia, correo..."></textarea>        
+            </mat-form-field>
+        </p>
+    </mat-grid-tile-->
+</mat-grid-list>
+<mat-grid-list @smoothEnter [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="17em" style="margin-bottom: 1em;">
+    <mat-grid-tile *ngFor="let user of users" style="margin: 1em;">
+        <mat-card class="user-card">
+            <mat-card-header>
+                <div mat-card-avatar>
+                    <img src="{{user.company.catchPhrase}}" class="user-image-adjust">
+                </div>
+                <mat-card-title>{{user.name}} [{{user.username}}]</mat-card-title>
+                <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content style="overflow-x: hidden;">
+                <b> Ciudad de residencia:</b>{{user.address.city}}
+                <br>
+                <b>Calle de residencia:</b>{{user.address.street}}
+                <br>
+                <b>Telefono:</b>  {{user.phone}}
+                <br>
+                <b>Compañia:</b> {{user.company.name}}                    
+                <br>
+                <b>Gravatar URL:</b> {{user.company.catchPhrase}}
+                <br>
+              </mat-card-content>
+        </mat-card>   
+    </mat-grid-tile>
+</mat-grid-list>
+
